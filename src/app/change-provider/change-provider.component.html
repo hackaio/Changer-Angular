@@ -1,0 +1,48 @@
+<div>
+    <mat-sidenav-container fxFlexFill>
+      <mat-sidenav fxLayout="column" mode="side" position="start" opened #sidenav>
+        <mat-nav-list >
+          <a class="nav-item" mat-list-item [ngClass]="num === 1 ?'active' : ''" (click)="num = 1"
+             routerLink="/shop/dashboard">Dashboard</a>
+          <a class="nav-item" mat-list-item [ngClass]="num === 2 ? 'active' : ''" (click)="num = 2">History</a>
+          <a class="nav-item" mat-list-item [ngClass]="num === 3 ? 'active' : ''" (click)="num = 3">Profile</a>
+<!--          <a mat-raised-button class="back-to-change" routerLink="/">-->
+<!--            <span class="material-icons">west</span>-->
+<!--            BACK TO CHANGE-->
+<!--          </a>-->
+        </mat-nav-list>
+      </mat-sidenav>
+      <mat-sidenav-content fxLayout="column">
+        <mat-toolbar class="background">
+          <button mat-icon-button (click)="sidenav.toggle()" class="opener">
+            <mat-icon>menu</mat-icon>
+          </button>
+          <div class="user" fxFlex fxLayoutAlign="flex-end" fxHide.xs>
+            <ul fxLayout>
+              <li class="username"><a routerLink="#">{{username}}</a></li>
+              <li>
+                <button mat-icon-button [matMenuTriggerFor]="menu">
+                </button>
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item>
+                    <a routerLink="" class="nav-item">Profile Setting</a>
+                  </button>
+                  <button mat-menu-item>
+                    <a routerLink="" class="nav-item">Billing</a>
+                  </button>
+                  <button mat-menu-item>
+                    <a (click)="logout()" class="nav-item">Logout</a>
+                  </button>
+                </mat-menu>
+              </li>
+            </ul>
+          </div>
+        </mat-toolbar>
+        <div class="container">
+          <div class="row">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>

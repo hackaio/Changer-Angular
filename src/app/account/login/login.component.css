@@ -1,0 +1,73 @@
+button, input {
+    outline: none;
+  }
+  
+  .login-form {
+    height: 100vh;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  form {
+    height: 400px;
+    width: 400px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    position: absolute;
+    background: white;
+    top: 20%;
+  }
+  
+  mat-form-field {
+    width: 95%;
+    box-sizing: border-box;
+  }
+  
+  input {
+    width: 100%;
+  }
+  
+  button {
+    margin-top: 10px;
+    width: 95%;
+    height: 50px;
+    box-sizing: border-box;
+    font-size: 18px;
+    color: white;
+  }
+  
+  button a{
+    color: white;
+    text-decoration: none;
+  }
+  
+  a{
+    text-decoration: none;
+  }
+  
+  a:hover{
+    text-decoration: none;
+    color: #000000;
+  }
+  
+  .quick-link{
+    box-sizing: border-box;
+  }
+  
+  .log-links{
+    box-sizing: border-box;
+  }
+  
+  @media(max-width:768px) {
+    form {
+      width: 90%;
+      border-radius: 0;
+    }
+  }
+
+  .background{
+      background-color: #0e2e13;
+  }
+  .color{
+      color: color;
+  }

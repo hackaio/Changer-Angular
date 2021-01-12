@@ -1,0 +1,15 @@
+a {
+  text-decoration: none;
+}
+
+/*.container {*/
+/*  padding-right: 30px;*/
+/*  padding-left: 30px;*/
+/*}*/
+.button{
+  background: #0e2e13;
+  color: white;
+  height: 40px;
+  text-align: center;
+  text-transform: uppercase;
+}

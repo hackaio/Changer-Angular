@@ -1,0 +1,109 @@
+<div class="login-form background" fxLayout="column" fxLayoutAlign="center center">
+  <form fxLayout="column"
+        #registerForm="ngForm" (ngSubmit)="register(registerForm)">
+    <h4 class="color" style="text-align: center">REGISTER TO {{ title.toUpperCase() }}</h4>
+    <div class="row-inputs">
+      <mat-form-field appearance="fill" color="primary">
+        <mat-label>Your firstname </mat-label>
+        <label for="username"></label>
+        <input id="firstname" type="text" matInput placeholder="firstname"
+               ngModel name="firstname"
+               required>
+      </mat-form-field>
+      <mat-form-field appearance="fill" color="primary">
+        <mat-label>Your sirname </mat-label>
+        <label for="sirname"></label>
+        <input id="sirname" type="text" matInput placeholder="sirname"
+               ngModel name="sirname"
+               required>
+      </mat-form-field>
+    </div>
+    <div class="row-inputs">
+      <mat-form-field appearance="fill" color="primary">
+        <mat-label>Your Business </mat-label>
+        <label for="business"></label>
+        <input id="business" type="text" matInput placeholder="business"
+               ngModel name="business"
+               required>
+      </mat-form-field>
+      <mat-form-field appearance="fill" color="primary">
+        <mat-label>Your Username </mat-label>
+        <label for="username"></label>
+        <input id="username" type="text" matInput placeholder="username"
+               ngModel name="username"
+               required>
+      </mat-form-field>
+    </div>
+    <div class="row-inputs">
+      <mat-form-field appearance="fill" color="primary">
+        <mat-label>Your Phone </mat-label>
+        <label for="phone"></label>
+        <input id="phone" type="tel" matInput placeholder="phonenumber"
+               ngModel name="phonenumber"
+               required>
+      </mat-form-field>
+      <mat-form-field appearance="fill" color="primary">
+        <mat-label>Your Email </mat-label>
+        <label for="email"></label>
+        <input id="email" type="email" matInput placeholder="email"
+               ngModel name="email"
+               required>
+      </mat-form-field>
+    </div>
+    <div class="row-inputs">
+      <mat-form-field appearance="fill" color="primary">
+        <mat-label>Location </mat-label>
+        <label for="location"></label>
+        <input id="location" type="text" matInput placeholder="location"
+               ngModel name="location"
+               required>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Roles</mat-label>
+        <select matNativeControl required
+                ngModel name="role"
+                required>
+          <option value="requester">Change Customer</option>
+          <option value="provider">Change Provider</option>
+        </select>
+      </mat-form-field>
+    </div>
+    <div class="row-inputs">
+      <mat-form-field appearance="fill" color="primary">
+      <mat-label>Choose Your Password</mat-label>
+      <label for="password"></label>
+      <input id="password" [type]="hide ? 'password' : 'text'"
+             matInput placeholder="Password"
+             ngModel name="password"
+             required>
+      <button type="button" class="mat-icon-button background" matSuffix (click)="hide = !hide"
+              [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      </mat-form-field>
+      <mat-form-field appearance="fill" color="primary">
+        <mat-label>Confirm Password</mat-label>
+        <label for="verifyPassword"></label>
+        <input id="verifyPassword" [type]="hide ? 'password' : 'text'"
+               matInput placeholder="Password"
+               ngModel name="confirmPassword"
+               required>
+        <button type="button" class="mat-icon-button background" matSuffix (click)="hide = !hide"
+                [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+    <mat-spinner *ngIf="loadingState" color="primary"></mat-spinner>
+    <div fxLayoutAlign="center">
+      <button mat-raised-button
+              *ngIf="!loadingState" class="background">
+        Register with Change
+      </button>
+    </div>
+    <div class="quick-link padding" *ngIf="!loadingState"  style="text-align: center; margin-top: 10px">
+      <a class="log-links padding color" routerLink="/" style="text-align: center; margin-right: 10px">Go to Change Home</a>
+      <a class="log-links padding color" routerLink="/account/login"  style="text-align: center;">Login</a>
+    </div>
+  </form>
+</div>

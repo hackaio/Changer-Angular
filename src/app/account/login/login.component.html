@@ -1,0 +1,38 @@
+<div class="login-form background" fxLayout fxLayoutAlign="center">
+    <form fxLayout="column" fxLayoutAlign="center center"
+          #logForm="ngForm"
+          (ngSubmit)="login(logForm)" >
+      <h4 class="color">LOGIN TO {{ title.toUpperCase() }}</h4>
+      <mat-form-field appearance="outline" color="primary">
+        <mat-label>Your Username [email]</mat-label>
+        <label for="email"></label>
+        <input id="email" type="email" matInput placeholder="email"
+               ngModel name="email"
+               required>
+      </mat-form-field>
+      <mat-form-field appearance="outline" color="primary">
+        <mat-label>Your Password</mat-label>
+        <label for="password"></label>
+        <input id="password" [type]="hide ? 'password' : 'text'"
+               matInput placeholder="Password"
+               ngModel name="password"
+               required>
+        <button class="mat-icon-button background" matSuffix (click)="hide = !hide"
+                [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+      <mat-spinner color="primary" *ngIf="loadingState"></mat-spinner>
+      <button  class="background" type="submit" mat-raised-button
+              *ngIf="!loadingState">Login</button>
+      <button class="background" type="button" mat-raised-button
+              *ngIf="!loadingState">
+        <a routerLink="/account/user">
+          Register with Smartfleek</a>
+      </button>
+      <div class="quick-link padding" *ngIf="!loadingState" style="margin-top: 10px;">
+        <a class="log-links padding color" routerLink="/">Go to Change Home</a>
+        <!-- <a class="log-links padding color" routerLink="/reset-password">Forgot Password</a> -->
+      </div>
+    </form>
+  </div>

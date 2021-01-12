@@ -1,0 +1,142 @@
+mat-sidenav-container, mat-sidenav, mat-sidenav-content{
+  height: 100vh;
+}
+
+mat-toolbar{
+  color: #ffffff;
+  z-index: 999;
+  box-shadow: 0 1px 3px 0 #555555;
+  position: sticky;
+  top: 0;
+  right: 0;
+  height: 65px !important;
+}
+
+router-outlet {
+  padding-top: 7px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+mat-sidenav-container{
+  background-color: #ffffff;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0;
+  margin:0;
+}
+
+mat-sidenav{
+  width: 250px;
+  padding:0;
+  border: none;
+}
+
+button{
+  outline: none;
+  box-sizing: border-box;
+}
+
+a{
+  text-decoration: none;
+}
+
+ul{
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+li{
+  display: inline-block;
+}
+
+.nav-item{
+  color: #000;
+}
+
+mat-nav-list{
+  padding-top: 180px;
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+}
+
+mat-nav-list a{
+  box-sizing: border-box;
+  margin:0;
+  padding: 0;
+  /* border: solid 1px black; */
+}
+.active, .active:active, .active:focus{
+  /* border: 1px solid #111; */
+  /* padding: 0;
+  margin:0; */
+  background-color: #0e2e13;
+  color: #ffffff;
+}
+
+mat-nav-list a:hover {
+  background: #e9e9e9;
+}
+
+mat-nav-list a.active:hover {
+  background: #b80f0a;
+}
+
+@media only screen and (max-width: 600px){
+  mat-sidenav {
+    display: none;
+  }
+  /* .opener{
+    display: none;
+  } */
+}
+
+@media (max-width: 768px){
+  mat-sidenav {
+    width: 150px;
+  }
+}
+
+.user mat-icon{
+  margin-top: 10px;
+  margin-right: 20px;
+  margin-left: -5px;
+  font-size: 40px;
+  vertical-align: middle;
+}
+
+.user img {
+  margin-top: 8px;
+  margin-right: 5px;
+  filter: brightness(100%);
+}
+
+.username {
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.username a{
+  font-weight: 400;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.back-to-change, mat-nav-list a.back-to-change:hover {
+  width: 250px;
+  border-radius: 0;
+  /*background: #f65280;*/
+  background: #0e2e13;
+  color: #ffffff;
+  position: fixed;
+  bottom: 2px;
+  left: 0;
+}
+.row{
+  padding-top: 20px;
+  margin-left: 50px;
+}
